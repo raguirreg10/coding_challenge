@@ -65,5 +65,4 @@ def health():
 
 
 # Launch the application on locahost, for publishing into a container change to app.run(host="0.0.0.0", port=5000)
-app.run()
 app.run(host="0.0.0.0", port=5000)
