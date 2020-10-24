@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: romell-python-flask
+spec:
+  type: NodePort
+  selector:
+    app: romell-flask
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 30007
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: romell-flask-deployment
+  labels:
+    app: romell-flask
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: romell-flask
+  template:
+    metadata:
+      labels:
+        app: romell-flask
+    spec:
+      containers:
+      - name: flask-app-romell
+        image: romellaguirre1008/flask-api:latest
+        ports:
+        - containerPort: 5000
