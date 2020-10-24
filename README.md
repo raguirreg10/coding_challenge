@@ -17,7 +17,7 @@ This repository contains the Dockerfile to build the image and run in any enviro
 
 1. Clone the repository using the `git clone` command and navigate into the root directory by running `cd coding_challenge`
 2. Using `docker` command run `docker build -t flask:latest .` (be aware there is a dot at the end) this command will look for the Dockerfile inside the root directory and build the image providing the name and tag after the -t argument.
-3. Once the process finishes, run the following command to create the container `docker run -dp 5000:5000 flask:latest`, docker run takes the image and create a container `-d` argument runs the container in detached mode or in the background for simple purpose, `-p` maps the ports between the host and the container following this format _host_port_:_container_port_
+3. Once the process finishes, run the following command to create the container `docker run -dp 5000:5000 --name flask_app flask:latest`, docker run takes the image and create a container `-d` argument runs the container in detached mode or in the background for simple purpose, `-p` maps the ports between the host and the container following this format _host_port_:_container_port_ and finally the `--name` provides the name for the container.
 4. Access the application from outside system by using the *Container Host IP Address:5000* which is the port used by the application, you can grab this information by running the commands `ifconfig` for Linux or `ipconfig` for Windows machines, for instance the Host IP is 172.0.0.1 you can access the application by using 172.0.0.1:5000
 
 ## Run in Kubernetes
