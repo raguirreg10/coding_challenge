@@ -5,6 +5,8 @@ This readme provides the instructions to build and run the application
 
 ## Web Service Workflow
 
-This Web service has 3 Endpoints * /api/encript
+This Web service has 3 Endpoints 
+
+- /api/encript
 
 
