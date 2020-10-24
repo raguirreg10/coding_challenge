@@ -22,7 +22,11 @@ This repository contains the Dockerfile to build the image and run in any enviro
 
 ## Run in Kubernetes
 
-This repository contains the resource file to run the application in Kubernetes, this file named **kubernetes_deployment.yml** contains the necessary resources to deploy and expose the application, a Service kind NodePort should be created and expose the Pods created by the Deployment Object which runs 3 replicas of the Pods
+This repository contains the resource file to run the application in Kubernetes, this file named **kubernetes_deployment.yml** contains the necessary resources to deploy and expose the application, a Service kind NodePort should be created and expose the Pods created by the Deployment Object which runs 3 replicas of the Pods.
+
+## Run Application Locally
+
+To run the application locally change the following line `app.run(host="0.0.0.0", port=5000)` to `app.run()` which enables the application to run on your local machine at http://127.0.0.1:5000/ 
 
 ## Docker Image Location
 
