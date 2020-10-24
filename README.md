@@ -28,6 +28,7 @@ This repository contains the resource file to run the application in Kubernetes,
 
 The official docker image can be found at the following link https://hub.docker.com/r/romellaguirre1008/flask-api or running the `docker pull` command `docker pull romellaguirre1008/flask-api`
 
+![Image of Docker](https://hackernoon.com/hn-images/0*m-xEibEV8ttbhv7W.png)
 
 
 
