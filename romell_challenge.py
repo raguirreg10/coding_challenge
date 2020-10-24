@@ -36,7 +36,9 @@ def encrypt():
                 return jsonify({"Input": value, "Output": "", "Status": "error", "Message": "Value is empty, cannot encrypt it", "Response Code": 400})
             else:
                 # encode64 based strategy
-                encoded_data = base64.b64encode(value)
+                message_bytes = value.encode('utf-8')
+                base64_bytes = base64.b64encode(message_bytes)
+                encoded_data = base64_bytes.decode('utf-8')
                 return jsonify({"Input": value, "Output": encoded_data, "Status": "success", "Message": "Encryption Successful", "Response Code": 200})
     else:
         return jsonify({"Input": "", "Output": "", "Status": "error", "Message": "Json format invalid, try again", "Response Code": 400})
@@ -52,7 +54,9 @@ def decrypt():
                 return jsonify({"Input": value, "Output": "", "Status": "error", "Message": "Value is empty, cannot decrypt it", "Response Code": 400})
             else:
                 # decode64 based strategy 
-                decoded_data = base64.b64decode(value)
+                base64_bytes = value.encode('utf-8')
+                message_bytes = base64.b64decode(base64_bytes)
+                decoded_data = message_bytes.decode('utf-8')
                 return jsonify({"Input": value, "Output": decoded_data, "Status": "success", "Message": "Decryption Successful", "Response Code": 200})
     else:
         return jsonify({"Input": "", "Output": "", "Status": "error", "Message": "Json format invalid, try again", "Response Code": 400})
