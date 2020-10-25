@@ -26,7 +26,7 @@ This repository contains the resource file to run the application in Kubernetes,
 
 ## Run Application Locally
 
-To run the application locally change the following line `app.run(host="0.0.0.0", port=5000)` to `app.run()` which enables the application to run on your local machine at http://127.0.0.1:5000/ 
+To run the application locally run the container on your local machine and can be accesible at _localhost:5000_ or _127.0.0.1:5000_
 
 ## Docker Image Location
 
