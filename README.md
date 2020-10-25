@@ -24,6 +24,8 @@ This repository contains the Dockerfile to build the image and run in any enviro
 
 This repository contains the resource file to run the application in Kubernetes, this file named **kubernetes_deployment.yml** contains the necessary resources to deploy and expose the application, a Service kind NodePort should be created and expose the Pods created by the Deployment Object which runs 3 replicas of the Pods.
 
+To run on a Kubernetes Cluster use the `kubectl create` command as follow `kubectl create -f kubernetes_deployment.yml`, after running this command the neccesary resources will be created and these can be shown by running `kubectl get all` which enlist the objects in the namespace, finally you can access the application by providing the _nodeMachineIP:30007_ (30007 is the port opened by the service NodePort which enables outside communication and redirected to port 5000 of the application)
+
 ## Run Application Locally
 
 To run the application locally run the container on your local machine and can be accesible at _localhost:5000_ or _127.0.0.1:5000_
